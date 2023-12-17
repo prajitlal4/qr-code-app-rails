@@ -1,9 +1,14 @@
-<h1>Pages#home</h1>
+<h1>QR Code Job Finder</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
-<p>Go to Page Candidate</p>
+<p class="">Sign in as a Candidate</p>
 <%= link_to "Candidate Path", pages_candidate_path %>
+<p class="">Sign out as a Candidate</p>
+<%= link_to "Sign out", destroy_candidate_session_path, method: :delete, data: { turbo_method: :delete } %>
 
-<p>Go to Page Business</p>
+<p>Sign in as a Business</p>
 <%= link_to "Business Path", pages_business_path %>
+<p class="">Sign out as a Business</p>
+<%= link_to "Sign out", destroy_business_session_path, method: :delete, data: { turbo_method: :delete } %>
+
 

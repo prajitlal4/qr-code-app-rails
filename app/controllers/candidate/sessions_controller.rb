@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 class Candidate::SessionsController < Devise::SessionsController
+
+  def create
+    sign_out_business_if_logged_in
+    super
+  end
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
@@ -24,4 +29,8 @@ class Candidate::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+  private
+  def sign_out_business_if_logged_in
+    sign_out(:business) if business_signed_in?
+  end
 end
