@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  # Root Path
+  root 'pages#home'
+
+  # Devise Routes for Business and Candidate
   devise_for :business, controllers: {
     sessions: 'business/sessions'
   }
@@ -7,11 +11,15 @@ Rails.application.routes.draw do
     sessions: 'candidate/sessions'
   }
 
-  root 'pages#home'
+  get 'candidate/dashboard', to: 'candidate#dashboard'
+  get 'business/dashboard', to: 'business#dashboard'
+
+  # Static Pages
   get 'pages/candidate'
   get 'pages/business'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  # ... other static pages ...
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # Optional: Redirects for singular/plural paths if needed
+  get 'candidates/*path', to: redirect('/candidate/%{path}')
+  get 'businesses/*path', to: redirect('/business/%{path}')
 end

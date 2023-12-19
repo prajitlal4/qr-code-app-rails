@@ -2,12 +2,12 @@
 <p>Find me in app/views/pages/home.html.erb</p>
 
 <p class="">Sign in as a Candidate</p>
-<%= link_to "Candidate Path", pages_candidate_path %>
+<%= link_to "Candidate Path", candidate_dashboard_path %>
 <p class="">Sign out as a Candidate</p>
 <%= link_to "Sign out", destroy_candidate_session_path, method: :delete, data: { turbo_method: :delete } %>
 
 <p>Sign in as a Business</p>
-<%= link_to "Business Path", pages_business_path %>
+<%= link_to "Business Path", business_dashboard_path %>
 <p class="">Sign out as a Business</p>
 <%= link_to "Sign out", destroy_business_session_path, method: :delete, data: { turbo_method: :delete } %>
 
