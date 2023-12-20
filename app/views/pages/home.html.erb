@@ -1,14 +1,13 @@
-<h1>QR Code Job Finder</h1>
+<h1 class="text-5xl font-bold">QR Code Job Finder</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
-<p class="">Sign in as a Candidate</p>
-<%= link_to "Candidate Path", candidate_dashboard_path %>
-<p class="">Sign out as a Candidate</p>
-<%= link_to "Sign out", destroy_candidate_session_path, method: :delete, data: { turbo_method: :delete } %>
+<h2 class="text-3xl">The easiest way to post job listings and get employees fast!</h2>
 
-<p>Sign in as a Business</p>
-<%= link_to "Business Path", business_dashboard_path %>
-<p class="">Sign out as a Business</p>
-<%= link_to "Sign out", destroy_business_session_path, method: :delete, data: { turbo_method: :delete } %>
+<div class="pt-5 flex gap-5">
+  <%= link_to "Candidate", candidate_dashboard_path, class: "bg-gray-100 px-5 rounded rounded-2xl" %>
+  <%= link_to "Business", business_dashboard_path, class: "bg-gray-100 px-5 rounded rounded-2xl" %>
+</div>
+
+
 
 

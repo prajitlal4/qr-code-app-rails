@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>QrCodeApp</title>
+    <title>Qr Code App</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,8 +10,9 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="prose">
-    <main class="container mx-auto mt-28 px-5 ">
+  <body class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <%= render 'shared/navbar' %>
+    <main class="container mx-auto mt-28 px-5">
       <%= yield %>
     </main>
   </body>
