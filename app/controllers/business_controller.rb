@@ -3,6 +3,10 @@ class BusinessController < ApplicationController
   def dashboard
   end
 
+  def job_postings
+    @postings = current_business.job_postings
+  end
+
   def index
   end
 

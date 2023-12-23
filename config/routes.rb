@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get 'candidate/dashboard', to: 'candidate#dashboard'
   get 'business/dashboard', to: 'business#dashboard'
 
+  get 'business/job-postings', to: 'business#job_postings'
+
   # Static Pages
   get 'pages/candidate'
   get 'pages/business'

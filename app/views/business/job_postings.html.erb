@@ -1,0 +1,10 @@
+<h1>Job Postings</h1>
+<h2>Current Postings</h2>
+
+<% @postings.each do |job_posting| %>
+  <div class="border-2 border-black">
+    <h3><%= job_posting.title %></h3>
+    <p><%= job_posting.description %></p>
+    <p><%= job_posting.salary %></p>
+  </div>
+<% end %>
