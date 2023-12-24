@@ -6,14 +6,15 @@
   <%= @job_posting.salary %>
   <% @fields.each do |field| %>
     <div class="field">
-      <%= form.label field["label"] %>
+      <%= form.hidden_field :job_posting_id, value: @job_posting.id %>
+      <%= form.label "responses[#{field["label"].underscore}]", field["label"] %>
       <% if field["type"] == 'text' %>
-        <%= form.text_field field["label"].underscore.to_sym %>
+        <%= form.text_field "responses[#{field["label"].underscore}]" %>
       <% elsif field["type"] == 'textarea' %>
-        <%= form.text_area field["label"].underscore.to_sym %>
+        <%= form.text_area "responses[#{field["label"].underscore}]" %>
       <% elsif field["type"] == 'number' %>
-        <%= form.number_field field["label"].underscore.to_sym %>
-      <% end %> <!-- This end closes the if-elsif block -->
+        <%= form.number_field "responses[#{field["label"].underscore}]" %>
+      <% end %>
     </div>
   <% end %> <!-- This end closes the each block -->
   <%= form.submit "Submit Application" %>
