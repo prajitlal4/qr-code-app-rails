@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   # Root Path
   root 'pages#home'
 
+  resources :job_postings do
+    resources :applications, only: [:new, :create]
+  end
+
   # Devise Routes for Business and Candidate
   devise_for :business, controllers: {
     sessions: 'business/sessions'

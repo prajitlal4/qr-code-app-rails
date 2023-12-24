@@ -1,0 +1,20 @@
+<%= form_with model: [@job_posting, @application], local: true do |form| %>
+  <%= @job_posting.title %>
+  <br />
+  <%= @job_posting.description %>
+  <br />
+  <%= @job_posting.salary %>
+  <% @fields.each do |field| %>
+    <div class="field">
+      <%= form.label field["label"] %>
+      <% if field["type"] == 'text' %>
+        <%= form.text_field field["label"].underscore.to_sym %>
+      <% elsif field["type"] == 'textarea' %>
+        <%= form.text_area field["label"].underscore.to_sym %>
+      <% elsif field["type"] == 'number' %>
+        <%= form.number_field field["label"].underscore.to_sym %>
+      <% end %> <!-- This end closes the if-elsif block -->
+    </div>
+  <% end %> <!-- This end closes the each block -->
+  <%= form.submit "Submit Application" %>
+<% end %> <!-- This end closes the form_with block -->
